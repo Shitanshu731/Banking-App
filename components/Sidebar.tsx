@@ -29,7 +29,17 @@ const Sidebar = ({ user }: SiderbarProps) => {
               href={item.route}
               key={item.label}
             >
-              {item.label}
+              <div className="relative size-6">
+                <Image
+                  src={item.imgURL}
+                  alt={item.label}
+                  fill
+                  className={cn({ "invert-0 brightness-[3]": isActive })}
+                />
+              </div>
+              <p className={cn("sidebar-label", { "!text-white": isActive })}>
+                {item.label}
+              </p>
             </Link>
           );
         })}
