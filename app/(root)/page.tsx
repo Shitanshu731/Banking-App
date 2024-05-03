@@ -26,7 +26,7 @@ const Home = () => {
           />
         </header>
       </div>
-      <RightSidebar user={loggedIn} transactions={[]} banks={3434} />
+      <RightSidebar user={loggedIn} transactions={[]} banks={[{}, {}]} />
     </section>
   );
 };
