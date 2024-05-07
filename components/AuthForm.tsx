@@ -67,48 +67,54 @@ const AuthForm = ({ type }: { type: string }) => {
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
               {type === "sign-up" && (
                 <>
-                  <CustomInput
-                    control={form.control}
-                    name="firstName"
-                    label="First Name"
-                    placeholder="Enter your firstName"
-                  />
-                  <CustomInput
-                    control={form.control}
-                    name="lastName"
-                    label="Last Name"
-                    placeholder="Enter your lastName"
-                  />
+                  <div className="flex gap-4">
+                    <CustomInput
+                      control={form.control}
+                      name="firstName"
+                      label="First Name"
+                      placeholder="Enter your firstName"
+                    />
+                    <CustomInput
+                      control={form.control}
+                      name="lastName"
+                      label="Last Name"
+                      placeholder="Enter your lastName"
+                    />
+                  </div>
                   <CustomInput
                     control={form.control}
                     name="address"
                     label="Address"
                     placeholder="Enter your address"
                   />
-                  <CustomInput
-                    control={form.control}
-                    name="postalCode"
-                    label="postalCode"
-                    placeholder="Enter your postalCode"
-                  />
-                  <CustomInput
-                    control={form.control}
-                    name="dateOfBirth"
-                    label="dob"
-                    placeholder="YYYY-MM-DD"
-                  />
-                  <CustomInput
-                    control={form.control}
-                    name="state"
-                    label="state"
-                    placeholder="Enter your state"
-                  />
-                  <CustomInput
-                    control={form.control}
-                    name="ssn"
-                    label="ssn"
-                    placeholder="1234"
-                  />
+                  <div className="flex gap-4">
+                    <CustomInput
+                      control={form.control}
+                      name="postalCode"
+                      label="postalCode"
+                      placeholder="Enter your postalCode"
+                    />
+                    <CustomInput
+                      control={form.control}
+                      name="dateOfBirth"
+                      label="dob"
+                      placeholder="YYYY-MM-DD"
+                    />
+                  </div>
+                  <div className="flex gap-4">
+                    <CustomInput
+                      control={form.control}
+                      name="state"
+                      label="state"
+                      placeholder="Enter your state"
+                    />
+                    <CustomInput
+                      control={form.control}
+                      name="ssn"
+                      label="SSN"
+                      placeholder="1234"
+                    />
+                  </div>
                 </>
               )}
               <CustomInput
@@ -149,7 +155,7 @@ const AuthForm = ({ type }: { type: string }) => {
               href={type === "sign-in" ? "/sign-up" : "/sign-in"}
               className="form-link"
             >
-              {type === "sign-in" ? "Sign in" : "Sign up"}
+              {type === "sign-in" ? "Sign up" : "Sign in"}
             </Link>
           </footer>
         </>
