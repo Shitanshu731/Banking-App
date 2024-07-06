@@ -33,7 +33,7 @@ export async function createAdminClient() {
   client.setSession(session.value);
 
   return {
-    get Account() {
+    get account() {
       return new Account(client);
     },
     get database() {
