@@ -26,6 +26,8 @@ import { useRouter } from "next/navigation";
 import { signIn, signUp } from "@/lib/actions/user.action";
 
 const AuthForm = ({ type }: { type: string }) => {
+  const [user, setUser] = useState(null);
+  const [isLoading, setisLoading] = useState(false);
   const router = useRouter();
   const formSchema = authFormSchema(type);
   const form = useForm<z.infer<typeof formSchema>>({
@@ -43,13 +45,14 @@ const AuthForm = ({ type }: { type: string }) => {
       if (type === "sign-up") {
         const newUser = await signUp(data);
         setUser(newUser);
+        console.log(user);
       }
       if (type === "sign-in") {
-        const response = await signIn({
-          email: data.email,
-          password: data.password,
-        });
-        if (response) router.push("/");
+        // const response = await signIn({
+        //   email: data.email,
+        //   password: data.password,
+        // });
+        // if (response) router.push("/");
       }
     } catch (e) {
       console.log(e);
@@ -59,8 +62,6 @@ const AuthForm = ({ type }: { type: string }) => {
     console.log(data);
   };
 
-  const [user, setUser] = useState(null);
-  const [isLoading, setisLoading] = useState(false);
   return (
     <section className="auth-form">
       <header className="flex flex-col gap-5 md:gap-8 ">
@@ -69,9 +70,9 @@ const AuthForm = ({ type }: { type: string }) => {
           <h1 className="text-26 font-ibm-plex-serif text-black-1">dsfsfdsf</h1>
         </Link>
         <div className="flex flex-col gap-1 md:gap-3">
-          <h1>
-            {user ? "Link Account" : type === "sign-in" ? "SignIn" : "SignUp"}
-            <p className="text-16 font-normal text-grat-600">
+          <h1 className="text-24 lg:text-36 font-semibold text-gray-900">
+            {user ? "Link Account" : type === "sign-in" ? "Sign In" : "Sign Up"}
+            <p className="text-16 font-normal text-gray-600">
               {user
                 ? "Link your Accont to get started"
                 : "Please Enter your details"}
@@ -80,7 +81,7 @@ const AuthForm = ({ type }: { type: string }) => {
         </div>
       </header>
       {user ? (
-        <div className="flex flex-col gap-4"></div>
+        <div className="flex flex-col gap-4">{/* PlaidLink */}</div>
       ) : (
         <>
           <Form {...form}>
@@ -92,13 +93,13 @@ const AuthForm = ({ type }: { type: string }) => {
                       control={form.control}
                       name="firstName"
                       label="First Name"
-                      placeholder="Enter your firstName"
+                      placeholder="Enter your first name"
                     />
                     <CustomInput
                       control={form.control}
                       name="lastName"
                       label="Last Name"
-                      placeholder="Enter your lastName"
+                      placeholder="Enter your last name"
                     />
                   </div>
                   <CustomInput
@@ -131,7 +132,7 @@ const AuthForm = ({ type }: { type: string }) => {
                     <CustomInput
                       control={form.control}
                       name="state"
-                      label="state"
+                      label="State"
                       placeholder="Enter your state"
                     />
                     <CustomInput
@@ -163,9 +164,9 @@ const AuthForm = ({ type }: { type: string }) => {
                       &nbsp; Loading...
                     </>
                   ) : type === "sign-in" ? (
-                    "Sign in"
+                    "Sign In"
                   ) : (
-                    "Sign up"
+                    "Sign Up"
                   )}
                 </Button>
               </div>
