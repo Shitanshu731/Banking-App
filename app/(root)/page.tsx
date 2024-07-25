@@ -13,7 +13,7 @@ const Home = async () => {
           <HeaderBox
             type="greeting"
             title="Welcome"
-            user={loggedIn?.name}
+            user={loggedIn?.name || "guest"}
             subtext="Access and manage your account Transaction efficiently."
           />
           <TotalBalanceBox

@@ -45,7 +45,6 @@ const AuthForm = ({ type }: { type: string }) => {
       if (type === "sign-up") {
         const newUser = await signUp(data);
         setUser(newUser);
-        console.log(user);
       }
       if (type === "sign-in") {
         const response = await signIn({
