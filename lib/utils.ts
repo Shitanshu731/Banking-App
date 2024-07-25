@@ -200,14 +200,14 @@ export const authFormSchema = (type: string) =>
     password: z.string().min(8),
     firstName: type === "sign-in" ? z.string().optional() : z.string().min(3),
     lastName: type === "sign-in" ? z.string().optional() : z.string().min(3),
-    address:
+    address1:
       type === "sign-in" ? z.string().optional() : z.string().min(2).max(50),
     city:
       type === "sign-in" ? z.string().optional() : z.string().min(2).max(50),
     state:
       type === "sign-in" ? z.string().optional() : z.string().min(2).max(2),
-    dateOfBirth:
+    dateOfBirth: type === "sign-in" ? z.string().optional() : z.string().min(3),
+    postalCode:
       type === "sign-in" ? z.string().optional() : z.string().min(3).max(6),
-    postalCode: type === "sign-in" ? z.string().optional() : z.string().min(3),
     ssn: type === "sign-in" ? z.string().optional() : z.string().min(3),
   });
