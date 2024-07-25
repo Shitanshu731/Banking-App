@@ -5,7 +5,7 @@ import { getAccount, getAccounts } from "@/lib/actions/bank.actions";
 import { getLoggedInUser } from "@/lib/actions/user.actions";
 import React from "react";
 
-const Home = async () => {
+const Home = async ({ searchParams: { id, page } }: SearchParamProps) => {
   const loggedIn = await getLoggedInUser();
   const accounts = await getAccounts({
     userId: loggedIn.$id,
@@ -15,6 +15,10 @@ const Home = async () => {
   const appwriteItemId = (id as string) || accountsData[0]?.appwriteItemId;
 
   const account = await getAccount({ appwriteItemId });
+  console.log({
+    accountsData,
+    account,
+  });
   return (
     <section className="home">
       <div className="home-content">
@@ -22,7 +26,7 @@ const Home = async () => {
           <HeaderBox
             type="greeting"
             title="Welcome"
-            user={loggedIn?.name || "guest"}
+            user={loggedIn?.firstName || "guest"}
             subtext="Access and manage your account Transaction efficiently."
           />
           <TotalBalanceBox
