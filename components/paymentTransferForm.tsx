@@ -112,11 +112,11 @@ const PaymentTransferForm = ({ accounts }: PaymentTransferFormProps) => {
                 </div>
                 <div className="flex w-full flex-col">
                   <FormControl>
-                    <BankDropdown
+                    {/* <BankDropdown
                       accounts={accounts}
                       setValue={form.setValue}
                       otherStyles="!w-full"
-                    />
+                    /> */}
                   </FormControl>
                   <FormMessage className="text-12 text-red-500" />
                 </div>
@@ -176,7 +176,7 @@ const PaymentTransferForm = ({ accounts }: PaymentTransferFormProps) => {
                 <div className="flex w-full flex-col">
                   <FormControl>
                     <Input
-                      placeholder="ex: johndoe@gmail.com"
+                      placeholder="ex: xyz@gmail.com"
                       className="input-class"
                       {...field}
                     />
@@ -224,7 +224,7 @@ const PaymentTransferForm = ({ accounts }: PaymentTransferFormProps) => {
                 <div className="flex w-full flex-col">
                   <FormControl>
                     <Input
-                      placeholder="ex: 5.00"
+                      placeholder="ex: 10.00"
                       className="input-class"
                       {...field}
                     />
