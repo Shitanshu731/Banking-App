@@ -1,7 +1,17 @@
+import HeaderBox from "@/components/HeaderBox";
 import React from "react";
 
-const page = () => {
-  return <div>Transaction history</div>;
+const TransactionHistory = () => {
+  return (
+    <div className="transactions">
+      <div className="transactions-header">
+        <HeaderBox
+          title="Transaction History"
+          subtext="see your bank details and transactions."
+        />
+      </div>
+    </div>
+  );
 };
 
-export default page;
+export default TransactionHistory;
