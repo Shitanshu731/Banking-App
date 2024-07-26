@@ -28,18 +28,15 @@ const MobileNav = ({ user }: MobileNavProps) => {
         </SheetTrigger>
         <SheetContent side="left" className="border-none bg-white">
           <nav className="flex flex-col gap-4">
-            <Link
-              href="/"
-              className="mb-12 cursor-pointer flex items-center gap-2 px-4 "
-            >
+            <Link href="/" className=" cursor-pointer items-center gap-2 px-4 ">
               <Image src="/icons/logo.svg" alt="logo" width={34} height={34} />
               <h1 className="text-26 font-ibm-plex-serif text-black-1 font-bold">
-                asdasd
+                Finance<span className="text-green-600">Flex</span>
               </h1>
             </Link>
             <div className="mobilenav-sheet">
               <SheetClose asChild>
-                <nav className="flex h-full flex-col gap-6 pt-16 text-white">
+                <nav className="flex h-full flex-col gap-6 pt-14 text-white">
                   {sidebarLinks.map((item) => {
                     const isActive =
                       pathname === item.route ||

@@ -159,7 +159,7 @@
   }
 
   .profile-banner {
-    @apply h-[120px] w-full bg-gradient-mesh bg-cover bg-no-repeat;
+    @apply h-[120px] w-full bg-gradient-to-br from-green-900 bg-cover bg-no-repeat;
   }
 
   .profile {
@@ -201,7 +201,7 @@
   }
 
   .transactions-account {
-    @apply flex flex-col justify-between gap-4 rounded-lg border-y bg-blue-600 px-4 py-5 md:flex-row;
+    @apply flex flex-col justify-between gap-4 rounded-lg border-y bg-gradient-to-br from-green-800 to-[#020500] px-4 py-5 md:flex-row;
   }
 
   .transactions-account-balance {

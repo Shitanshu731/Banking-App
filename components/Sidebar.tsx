@@ -21,7 +21,9 @@ const Sidebar = ({ user }: SiderbarProps) => {
             height={34}
             className="size-[24px] max-xl:size-14 "
           />
-          <h1 className="sidebar-logo">Horizon</h1>
+          <h1 className="sidebar-logo">
+            Finance<span className="text-green-600">Flex</span>
+          </h1>
         </Link>
         {sidebarLinks.map((item) => {
           const isActive =
