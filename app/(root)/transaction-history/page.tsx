@@ -30,7 +30,16 @@ const TransactionHistory = async ({
       <div className="space-y-6 ">
         <div className="transactions-account">
           <div className="flex flex-col gap-2">
-            <h2>{account?.data.name} </h2>
+            <h2 className="text-18 font-bold text-white">
+              {account?.data.name}{" "}
+            </h2>
+            <p className="text-14  text-blue-25">
+              {account?.data.officialName}
+            </p>
+            <p className="text-14 font-semibold tracking-[1.1px] text-white">
+              ●●●● ●●●● ●●●● {account?.data.mask}{" "}
+              <span className="text-16">{account?.mask}</span>
+            </p>
           </div>
         </div>
       </div>
