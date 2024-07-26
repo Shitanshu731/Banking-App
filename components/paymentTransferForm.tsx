@@ -12,7 +12,7 @@ import { createTransaction } from "@/lib/actions/transaction.actions";
 import { getBank, getBankByAccountId } from "@/lib/actions/user.actions";
 import { decryptId } from "@/lib/utils";
 
-// import { BankDropdown } from "./BankDropdown";
+import { BankDropdown } from "./BankDropdown";
 import { Button } from "./ui/button";
 import {
   Form,
@@ -112,11 +112,11 @@ const PaymentTransferForm = ({ accounts }: PaymentTransferFormProps) => {
                 </div>
                 <div className="flex w-full flex-col">
                   <FormControl>
-                    {/* <BankDropdown
+                    <BankDropdown
                       accounts={accounts}
                       setValue={form.setValue}
                       otherStyles="!w-full"
-                    /> */}
+                    />
                   </FormControl>
                   <FormMessage className="text-12 text-red-500" />
                 </div>
