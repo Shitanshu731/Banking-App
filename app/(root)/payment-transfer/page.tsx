@@ -18,6 +18,9 @@ const page = async () => {
         title="Transfer Funds"
         subtext="please provide any specific details or notes related to the payment transfer."
       />
+      <section className="size-full pt-5">
+        <PaymentTransferForm accounts={accountsData} />
+      </section>
     </section>
   );
 };
